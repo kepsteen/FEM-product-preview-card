@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:html/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "html"
+  ],
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "rules": {
+        "html/img-req-width-and-height": "off"
+      }
+    }
+  ],
+  "rules": {
+    // Add other custom rules here
+  }
+}
