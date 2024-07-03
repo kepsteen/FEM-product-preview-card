@@ -2,8 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F2EAE2',
+            aurometal: '#6C7289',
+            aquamarine: '#3D8168',
+            "aquamarine-dark": "#1A4032",
+            gunmetal: '#1C232B',
+          },
+          fontFamily: {
+            montserrat: ['Montserrat', 'sans-serif'],
+            fraunces: ['Fraunces', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Product preview card component</title>
@@ -14,22 +37,28 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
-  <div class="card">
-    <img src="images/image-product-mobile.jpg" alt="product image" >
+<body class="bg-cream flex flex-col justify-center items-center h-screen">
+  <div class="card w-[calc(100% - 8rem)] my-7 mx-4 text-aurometal text-xs font-medium bg-white rounded-lg font-montserrat flex flex-wrap md:flex-row max-w-[calc(100% - 32px)] min-[632px]:max-w-[600px] ">
+    <img src="images/image-product-mobile.jpg" alt="product image" class="w-full rounded-t-lg mb-3 md:mb-0 min-[632px]:max-w-[300px] min-[632px]:my-0 object-cover">
+    <div class="column min-[632px]:max-w-[300px]">
+      <p class="tracking-[0.313rem] uppercase ml-6 my-3">Perfume</p>
+      <h1 class="text-[2rem] text-gunmetal font-fraunces font-bold leading-none mx-6 mb-4">Gabrielle Essence Eau De Parfum</h1>
+      <p class="text-aurometal text-[0.875rem] leading-[1.438rem] mx-6">A floral, solar and voluptuous interpretation composed by Olivier Polge,
+    Perfumer-Creator for the House of CHANEL.</p>
+      <div class="price flex mb-5 mt-6 gap-[1.188rem] ml-6">
+        <p class="text-aquamarine text-[2rem] font-bold font-fraunces" >$149.99</p>
+        <p class="line-through text-aurometal text-[0.813rem]">$169.99</p>
+      </div>
+      <div class="button-container flex justify-center mx-6 pb-6">
+        <button type="button" class="bg-aquamarine text-white py-[0.938rem] w-full rounded-md">
+          <div class="button-text flex justify-center gap-2">
+            <img src="images/icon-cart.svg" alt="">
+            <p>Add to Cart</p>
+          </div>
+        </button>
+      </div>
+    </div>
   </div>
-  Perfume
-
-  Gabrielle Essence Eau De Parfum
-
-  A floral, solar and voluptuous interpretation composed by Olivier Polge,
-  Perfumer-Creator for the House of CHANEL.
-
-  $149.99
-  $169.99
-
-  Add to Cart
-
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
